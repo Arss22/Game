@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Semangat Tugas</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #0f172a;
+      color: #38bdf8;
+      padding: 30px;
+      text-align: center;
+    }
+    .hidden-word {
+      color: #a3e635;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+    .hidden-word:hover {
+      color: #facc15;
+    }
+    .popup {
+      display: none;
+      padding: 20px;
+      background-color: rgba(17, 24, 39, 0.9);
+      border: 2px solid #22d3ee;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 0;
+      color: #facc15;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-shadow: 0px 0px 10px #38bdf8;">🚀 Temukan Kata Kunci Tersembunyi! 🚀</h2>
+  <p>
+    Dalam perjalanan akademik, ada beberapa hal yang menjadi kunci utama keberhasilan:  
+    <span class="hidden-word" onclick="showMotivation('disiplin')">disiplin</span>,  
+    <span class="hidden-word" onclick="showMotivation('kerja keras')">kerja keras</span>,  
+    <span class="hidden-word" onclick="showMotivation('ketekunan')">ketekunan</span>, dan  
+    <span class="hidden-word" onclick="showMotivation('motivasi')">motivasi</span>.  
+    Dengan semua ini, kita bisa mencapai impian kita dengan usaha dan dedikasi!
+    </p>
+
+    <div class="popup" id="motivationBox">
+    <strong>Kata Motivasi:</strong>
+    <p id="motivationText"></p>
+  </div>
+  
+  <script>
+    const motivationMessages = {
+      "disiplin": "Disiplin adalah jembatan antara cita-cita dan pencapaian. - Jim Rohn",
+      "kerja keras": "Ilmu tanpa kerja keras hanyalah mimpi; kerja keras tanpa ilmu adalah sia-sia. - Pepatah Jepang",
+      "ketekunan": "Orang yang tekun tidak pernah gagal. Mereka hanya menemukan banyak cara sebelum berhasil. - Thomas Edison",
+      "motivasi": "Motivasi adalah bahan bakar untuk mencapai tujuan besar. Tetaplah bergerak maju! - Zig Ziglar"
+    };
+
+    function showMotivation(keyword) {
+      let motivationBox = document.getElementById('motivationBox');
+      let motivationText = document.getElementById('motivationText');
+
+      motivationText.innerText = motivationMessages[keyword];
+      motivationBox.style.display = 'block';
+      motivationBox.style.opacity = '1';
+    }
+  </script>
+</body>
+</html
